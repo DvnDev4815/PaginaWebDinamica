@@ -1,0 +1,30 @@
+<div class="main">
+    <h4>Editar alumno</h4>
+    <hr>
+
+    <form action="/usuario/editar/{{data.ID}}" method="post">
+
+        <div class="div_nombre_id">
+            <label for="ID">ID:</label>
+            <input type="number" name="ID" min="1" max="9999" value="{{data.ID}}">
+
+            <label for="Nombre">Nombre de alumno:</label>
+            <input type="text" name="Nombre" placeholder="Inserte nombre del alumno" value="{{data.Nombre}}">
+        </div>
+
+        <div class="div_correo_CodCurso">
+            <label for="codCurso">Codigo de Curso:</label>
+            <input type="number" name="codCurso" min="1" max="6" value="{{data.codCurso}}">
+
+            <label for="Email">E-mail:</label>
+            <input type="email" name="Email" placeholder="Inserte E-mail del alumno" value="{{data.Email}}">
+        </div>
+
+        
+
+        <div class="div_submin_reset">
+            <input type="submit" value="Actualizar" class="btn btn-primary">
+            <input type="reset" value="Restablecer">
+        </div>
+    </form>
+</div>

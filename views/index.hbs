@@ -1,0 +1,35 @@
+
+<div class="main">
+    <h1>Registro: </h1>
+        <table>
+            <tr>
+                <th>ID:</th>
+                <th>Nombre:</th>
+                <th>E-Mail:</th>
+                <th>Codigo de curso:</th>
+                <th style="background-color: #207744;"><a href="/usuario/agregarForm"><i class="bi bi-plus"></i></a></th>
+            </tr>
+
+    {{#if data}}
+            {{#each data}}
+                <tr>
+                    <td>{{ID}}</td>
+                    <td>{{Nombre}}</td>
+                    <td>{{Email}}</td>
+                    <td>{{codCurso}}</td>
+
+                    <td style="background-color: brown;">
+                        <form action="/usuario/delete/{{ID}}?_method=delete" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit"><i class="bi bi-trash"></i></button>
+                        </form>
+                    </td>
+
+                    <td style="background-color: darkcyan;">
+                        <a href="/usuario/editarForm/{{ID}}"><i class="bi bi-pencil-square"></i></a>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    {{/if}}
+</div>
